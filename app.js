@@ -111,30 +111,30 @@ app.use((req, res, next) => {
 
 //create user
      
-app.use((req, res, next) => {
-  const user = new User({
-    firstName: "Romaine",
-    lastName: "Ascott",
-    email: "romaine.ascott@gmail.com",
-    password: "123456"
-  });
+// app.use((req, res, next) => {
+//   const user = new User({
+//     firstName: "Romaine",
+//     lastName: "Ascott",
+//     email: "romaine.ascott@gmail.com",
+//     password: "123456"
+//   });
 
-  bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(user.password, salt, (err, hash) => {
-      if (err) throw err;
-      user.password = hash;
-      user
-        .save()
-        .then(user => {
-          console.log(user);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    });
-  });
-  next();
-});
+//   bcrypt.genSalt(10, (err, salt) => {
+//     bcrypt.hash(user.password, salt, (err, hash) => {
+//       if (err) throw err;
+//       user.password = hash;
+//       user
+//         .save()
+//         .then(user => {
+//           console.log(user);
+//         })
+//         .catch(err => {
+//           console.log(err);
+//         });
+//     });
+//   });
+//   next();
+// });
 
 // global variables
 app.use(function(req, res, next) {
