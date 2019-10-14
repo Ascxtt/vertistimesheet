@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+    <a href="/" class="navbar-brand">Vertis Technologies - TimeSheet</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+
+        {{#if user}}
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+          <span class="nav-link text-white border mt-2 p-2">{{user.firstName}} {{user.lastName}} - {{user.email}}</span>
+        </li>
+        </ul>
+       {{/if}}
+
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+         <li class="nav-item">
+          <a href="/timesheets/add" class="nav-link {{#if add}}active{{/if}}">Add</a>
+        </li>
+        <li class="nav-item">
+          <a href="/users/logout" class="nav-link">Logout</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a href="/users/login" class="nav-link {{#if login}}active{{/if}}" >Login</a>
+        </li>
+        <li class="nav-item">
+          <a href="/users/register" class="nav-link {{#if login}}active{{/if}}" >Register</a>
+        </li>
+        {{/if}}
+      </ul>
+
+
+    </div>
+  </div>
+</nav>
