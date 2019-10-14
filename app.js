@@ -15,6 +15,9 @@ const port = process.env.PORT || 5000;
 const Client = require("./models/Client");
 const User = require("./models/User");
 
+// db config
+const db = require("./config/database");
+
 // serve static files
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -26,7 +29,7 @@ const timesheets = require("./routes/timesheets");
 mongoose.Promise = global.Promise;
 // Connect to mongoose
 mongoose
-  .connect("mongodb://localhost/timesheet-dev", {
+  .connect(db.mongoURI, {
     useUnifiedTopology: true,
     useNewUrlParser: true
   })
@@ -53,8 +56,7 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// db config
-const db = require("./config/database");
+
 
 // mongoose middleware
 
