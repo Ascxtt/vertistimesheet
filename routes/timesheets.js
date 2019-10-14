@@ -7,7 +7,7 @@ var momentDurationFormatSetup = require("moment-duration-format");
 const { ensureAuthenticated } = require("../helpers/auth");
 
 // load timesheet and client model
-const Timesheet = require("../models/Timesheet");
+const Timesheet = require("../models/TimeSheet");
 const Client = require("../models/Client");
 
 // add time
