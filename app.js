@@ -99,7 +99,7 @@ app.use((req, res, next) => {
       lastName: 'Dixon',
       position: 'CEO'
     }
-//   })
+  })
 //   client.save()
 //     .then(client => {
 //       console.log(client)
