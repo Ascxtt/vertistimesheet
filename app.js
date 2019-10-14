@@ -90,15 +90,15 @@ app.use(flash());
 // method override middleware
 app.use(methodOverride("_method"));
 
-// create client
-// app.use((req, res, next) => {
-//   const client = new Client({
-//     name: 'Dixons Accounting Firm',
-//     manager: {
-//       firstName: 'Danea',
-//       lastName: 'Dixon',
-//       position: 'CEO'
-//     }
+//create client
+app.use((req, res, next) => {
+  const client = new Client({
+    name: 'Dixons Accounting Firm',
+    manager: {
+      firstName: 'Danea',
+      lastName: 'Dixon',
+      position: 'CEO'
+    }
 //   })
 //   client.save()
 //     .then(client => {
